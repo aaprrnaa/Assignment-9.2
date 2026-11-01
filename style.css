@@ -1,0 +1,420 @@
+
+/* =================================
+   1. GLOBAL STYLES
+   ================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #252923;
+    background: #fafaf7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    overflow-wrap: break-word;
+}
+
+p {
+    overflow-wrap: break-word;
+}
+
+.section {
+    width: min(100% - 2rem, 72rem);
+    margin-inline: auto;
+}
+
+.eyebrow {
+    margin-bottom: 0.75rem;
+    color: #c87647;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+/* =================================
+   2. HEADER
+   ================================= */
+
+.site-header {
+    width: min(100% - 2rem, 80rem);
+    margin-inline: auto;
+    padding-block: 1.25rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    border-bottom: 1px solid #e6e7e1;
+}
+
+.logo {
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+.logo span {
+    color: #c87647;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1rem;
+}
+
+.navigation a {
+    color: #646960;
+    font-size: 0.9rem;
+}
+
+.navigation a:hover,
+.text-link:hover {
+    color: #c87647;
+}
+
+/* =================================
+   3. HERO SECTION
+   Mobile-first: content is stacked
+   ================================= */
+
+.hero {
+    width: min(100% - 2rem, 80rem);
+    margin-inline: auto;
+    padding-block: 3rem;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+}
+
+.hero-content {
+    min-width: 0;
+    align-self: center;
+}
+
+.hero h1 {
+    max-width: 12ch;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    line-height: 1.05;
+}
+
+.hero-description {
+    max-width: 38rem;
+    margin-block: 1.25rem 1.5rem;
+    color: #696e65;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    line-height: 1.8;
+}
+
+.read-button {
+    display: inline-block;
+    padding: 0.8em 1.2em;
+    border-radius: 0.35rem;
+    background: #282d26;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.read-button:hover {
+    background: #c87647;
+}
+
+.hero-image {
+    min-width: 0;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 0.65rem;
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    color: #73776f;
+    font-size: 0.8rem;
+}
+
+/* =================================
+   4. STORIES SECTION
+   ================================= */
+
+.stories {
+    padding-block: 2rem 4rem;
+}
+
+.section-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+}
+
+.section-heading h2,
+.article-body h2 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    letter-spacing: -0.04em;
+}
+
+.section-intro {
+    max-width: 32rem;
+    color: #696e65;
+    font-size: 0.95rem;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+}
+
+.story-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #e8e8e1;
+    border-radius: 0.65rem;
+    background: #fff;
+}
+
+.story-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.story-content {
+    padding: 1.25rem;
+}
+
+.category {
+    margin-bottom: 0.5rem;
+    color: #c87647;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.story-content h3 {
+    margin-bottom: 0.7rem;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+}
+
+.story-content > p:not(.category) {
+    margin-bottom: 1rem;
+    color: #696e65;
+    font-size: 0.95rem;
+    line-height: 1.75;
+}
+
+.text-link {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* =================================
+   5. FEATURE ARTICLE
+   ================================= */
+
+.feature-article {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    padding-bottom: 4rem;
+}
+
+.article-image {
+    min-width: 0;
+}
+
+.article-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 0.65rem;
+}
+
+.article-body {
+    min-width: 0;
+    max-width: 42rem;
+}
+
+.article-body h2 {
+    margin-bottom: 1.25rem;
+}
+
+.article-body > p:not(.eyebrow) {
+    margin-bottom: 1rem;
+    color: #62675f;
+    font-size: 1rem;
+    line-height: 1.85;
+}
+
+/* =================================
+   6. FOOTER
+   ================================= */
+
+.site-footer {
+    width: min(100% - 2rem, 80rem);
+    margin-inline: auto;
+    padding-block: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+
+    border-top: 1px solid #e6e7e1;
+    text-align: center;
+}
+
+.site-footer p {
+    color: #73776f;
+    font-size: 0.82rem;
+}
+
+/* =================================
+   7. TABLET — 600px AND ABOVE
+   ================================= */
+
+@media (min-width: 600px) {
+    .hero {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: center;
+        gap: 2rem;
+        padding-block: 4rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 3.8rem);
+    }
+
+    .hero-image img {
+        aspect-ratio: 4 / 5;
+    }
+
+    .section-heading {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+        align-items: end;
+        gap: 2rem;
+    }
+
+    .story-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+
+    .feature-article {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+        gap: 2rem;
+    }
+
+    .article-image img {
+        aspect-ratio: 3 / 4;
+    }
+
+    .site-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+/* =================================
+   8. DESKTOP — 1024px AND ABOVE
+   ================================= */
+
+@media (min-width: 1024px) {
+    .hero {
+        gap: 4rem;
+        padding-block: 5rem 6rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(3.5rem, 5vw, 5rem);
+    }
+
+    .hero-image img {
+        aspect-ratio: 5 / 4;
+    }
+
+    .stories {
+        padding-bottom: 6rem;
+    }
+
+    .section-heading {
+        margin-bottom: 2.5rem;
+    }
+
+    .story-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+    }
+
+    .story-content {
+        padding: 1.5rem;
+    }
+
+    .feature-article {
+        gap: 4rem;
+        padding-bottom: 6rem;
+    }
+
+    .article-image img {
+        aspect-ratio: 5 / 4;
+    }
+
+    .article-body > p:not(.eyebrow) {
+        font-size: 1.05rem;
+    }
+}
+
+/* =================================
+   9. ACCESSIBILITY
+   ================================= */
+
+a:focus-visible {
+    outline: 2px solid #c87647;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
